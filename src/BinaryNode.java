@@ -97,25 +97,42 @@ public class BinaryNode<T> {
 
     //Complete the following method
     public String toString() {
+
         String tree = "";
-        tree += "tree(";
-        tree += printRecTree(this,tree);
-        tree +=")";
+        String leftTree = "";
+        String rightTree = "";
+        tree +=this.data;
+        if(this.left!=null)
+            leftTree = printRecTree(this.left,"");
+        if(this.right!=null)
+            rightTree = printRecTree(this.right,"");
+        if(leftTree!="") {
+            tree = leftTree + "," + tree;
+
+        }
+        if(rightTree!="") {
+            tree =  tree+ "," + rightTree;
+        }
+        tree = "(" + tree + ")";
         return tree;
     }
     private String printRecTree(BinaryNode<T> curr,String tree){
-        if(curr ==null)
-            return tree;
-        if(this.left!=null) {
-            tree+="(";
-            printRecTree(curr.left,tree);
-            tree+=")";
+        if(curr.left==null &curr.right ==null)
+            return "(" + curr.data + ")";
+        String left = "";
+        String right = "";
+        if(curr.right!=null & curr.left!=null){
+            left = printRecTree(curr.left,"");
+            right = printRecTree(curr.right,"");
+            tree ="(" +left + "," + curr.data + ","+ right + ")";
         }
-        tree+=this.data.toString();
-        if(this.right!=null) {
-            tree+="(";
-            printRecTree(curr.left,tree);
-            tree+=")";
+        else if(curr.left!=null){
+            left = printRecTree(curr.left,"");
+            tree = "(" +left+"," + curr.data  + ")";
+        }
+        else{
+            right = printRecTree(curr.right,"");
+            tree = "(" + curr.data +","+ right + ")";
         }
         return tree;
     }

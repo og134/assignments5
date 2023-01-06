@@ -208,7 +208,7 @@ public class testAss5 {
 			if(D) System.out.print("check acc name tomer vs acc name tomerhagever :");
 			if(!check) {
 				fail();
-				System.out.println("the name tomer should be shorter than the name tomerhagever and result should be shorter than 0 but yours: " + comp.compare(BA1, BA2) );
+				System.out.println("the name tomer should be shorter than the name tomerhagever an4d result should be shorter than 0 but yours: " + comp.compare(BA1, BA2) );
 				good=false;
 			}//if
 			if(D & good) System.out.println("good");
@@ -308,6 +308,7 @@ public class testAss5 {
 				good();
 			System.out.println();
 		}
+
 		private static void c5(boolean D) {
 			boolean good=true;
 			String s;
