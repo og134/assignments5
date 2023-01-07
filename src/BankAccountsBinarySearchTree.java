@@ -14,38 +14,29 @@ public class BankAccountsBinarySearchTree extends BinarySearchTree<BankAccount>{
 	    // Complete the following methods
 	    public void balance(){
 			List<BankAccount> nodes= new LinkedList<>();
-			Iterator<BankAccount> iter = this.iterator();
-			while(iter.hasNext()) {
-				nodes.add(iter.next());
+			for (BankAccount bankAccount : this) {
+				nodes.add(bankAccount);
 			}
 			BankAccountsBinarySearchTree temp = new BankAccountsBinarySearchTree(this.comparator);
 			temp.buildBalancedTree(nodes,0,nodes.size()-1);
 			this.root = temp.root;
-	    }
+
+	}
+
+
 
 	    private void buildBalancedTree(List<BankAccount> list, int low, int high) {
+			//impleaments binary search to build the tree
 			if(low > high)
 				return;
-			else if(low==high){
-				if(this.root ==null)
-					this.root = new BinaryNode<>(list.get(low));
-				else
-					this.root.insert(list.get(low));
-				return;
+			int index = (low + high) / 2;
+			if(this.root == null){
+				this.root = new BinarySearchNode<>(list.get(index),this.comparator);
 			}
-			else {
-				int index = (low + high) / 2;
-				BankAccount temp = list.get(index);
-				if (this.root == null)
-					this.root = new BinaryNode<>(temp);
-				else
-					this.root.insert(temp);
-				//left side
-
-				buildBalancedTree(list, low, index-1);
-				//right side
-				buildBalancedTree(list, index+1, high);
-			}
-	    }
-
+			this.root.insert(list.get(index));
+			//left side
+			buildBalancedTree(list, low, index-1);
+			//right side
+			buildBalancedTree(list, index+1, high);
+		}
 }

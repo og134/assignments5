@@ -10,6 +10,6 @@ public class FilterByBalance implements Filter<BankAccount>{
 	public boolean accept(BankAccount elem) {
 		if(elem == null)
 			return false;
-		return this.threshold > elem.getBalance();
+		return this.threshold <= elem.getBalance();
 	}
 }
