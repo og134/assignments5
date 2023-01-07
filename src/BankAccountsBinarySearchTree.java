@@ -10,32 +10,42 @@ public class BankAccountsBinarySearchTree extends BinarySearchTree<BankAccount>{
 	public BankAccountsBinarySearchTree(Comparator<BankAccount> myComparator) {
 		super(myComparator);
 	}
-	
+
 	    // Complete the following methods
 	    public void balance(){
-			List<BankAccount> nodes= new LinkedList<BankAccount>();
-			BinaryTreeInOrderIterator<BankAccount> treeIter = new BinaryTreeInOrderIterator<BankAccount>(this.root);
-			while(treeIter.hasNext()) {
-				nodes.add(treeIter.next());
+			List<BankAccount> nodes= new LinkedList<>();
+			Iterator<BankAccount> iter = this.iterator();
+			while(iter.hasNext()) {
+				nodes.add(iter.next());
 			}
 			BankAccountsBinarySearchTree temp = new BankAccountsBinarySearchTree(this.comparator);
 			temp.buildBalancedTree(nodes,0,nodes.size()-1);
 			this.root = temp.root;
 	    }
-	    
+
 	    private void buildBalancedTree(List<BankAccount> list, int low, int high) {
 			if(low > high)
 				return;
-			if(low==high){
-				this.root.insert(list.get(low));
+			else if(low==high){
+				if(this.root ==null)
+					this.root = new BinaryNode<>(list.get(low));
+				else
+					this.root.insert(list.get(low));
 				return;
 			}
-			int index = (low+high)/2;
-			BankAccount temp = list.get(index);
-			this.root.insert(temp);
-			//left side
-			buildBalancedTree(list,low,index);
-			//right side
-			buildBalancedTree(list,index,high);
+			else {
+				int index = (low + high) / 2;
+				BankAccount temp = list.get(index);
+				if (this.root == null)
+					this.root = new BinaryNode<>(temp);
+				else
+					this.root.insert(temp);
+				//left side
+
+				buildBalancedTree(list, low, index-1);
+				//right side
+				buildBalancedTree(list, index+1, high);
+			}
 	    }
+
 }

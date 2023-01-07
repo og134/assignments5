@@ -1,44 +1,73 @@
-import java.math.BigInteger;
+
 import java.util.Iterator;
 
 public class AlmostPrimeIterator implements Iterator<Integer> {
+    private int num;
+    private LinkedList<Integer> primeNums;
+    private int nextAlmostPrime;
+    private int index;
 
-	int num;
-    LinkedList<Integer> primeNums;
-    public AlmostPrimeIterator(int start){
-        this.num = start;
+    public AlmostPrimeIterator(int start) {
+        //will save the number that multiplay and search for a number to multiply with
         this.primeNums = new LinkedList<>();
-        this.primeNums.add(2); //first prime number
+        this.primeNums.add(2);
+        this.findPrimes(start);
+        this.num = start + 1;
+
     }
-	//Complete the following method
-    public boolean hasNext(){
+
+    //Complete the following method
+    public boolean hasNext() {
         return true;
     }
 
-	//Complete the following method
-    public Integer next(){
-        return 1;
-    }
-    /*
-    public static boolean findPrime() {
-        boolean ans = true;
-        boolean isPrime = true;
-
-        check = check.add(update); // update to 2
-        mulVal = check.multiply(check);
-        // <1 means mulVal is smaller then n
-        while (ans & mulVal.compareTo(n) < 1) {
-            if (mod_res.compareTo(n.mod(check)) == 0) {
-                ans = false;
+    //Complete the following method
+    public Integer next() {
+        boolean found = false;
+        int ret = 0;
+        while (!found) {
+            Iterator<Integer> primeNumsIter = this.primeNums.iterator();
+            boolean check = true;
+            while (primeNumsIter.hasNext() & check) {
+                int primeToCheck = primeNumsIter.next();
+                if (primeToCheck * this.primeNums.get(0) > this.num)
+                    check = false;
+                else if (this.num % primeToCheck == 0) {
+                    int result = this.num / primeToCheck;
+                    if (isPrime(result) & result != primeToCheck) {
+                        // we found a number that C = A*B are both primes
+                        if (!this.primeNums.contains(result))
+                            this.primeNums.add(result);
+                        ret = this.num;
+                        found = true;
+                        check = false;
+                    }
+                }
             }
-            mulVal = check.multiply(check);
-            check = check.add(update);
-
+            this.num++;
         }
-
-        return ans;
-
+        return ret;
     }
-    */
 
+    private void findPrimes(int start) {
+        for (int n = 2; n*n <= start; n++) {
+            boolean isPrime = true;
+            for (int p = 2; p * p <= n & isPrime; p++) {
+                if (n % p == 0) {
+                    isPrime = false;
+                }
+            }
+            if (isPrime)
+                this.primeNums.add(n);
+        }
+    }
+
+    private boolean isPrime(int check) {
+        for (int p = 2; p * p <= check ; p++) {
+            if (check % p == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

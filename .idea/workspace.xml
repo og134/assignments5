@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1b81e3c-0c86-45e1-83f4-48c2fc21e4c8" name="Changes" comment="the first commit">
+    <list default="true" id="a1b81e3c-0c86-45e1-83f4-48c2fc21e4c8" name="Changes" comment="works till 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankAccountFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankAccountFiltering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BinaryNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testAss5 (1).java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testAss5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlmostPrimeIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlmostPrimeIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672853535679</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="works till 4">
+      <created>1673022103722</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673022103722</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,7 +97,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="the first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first commit" />
+    <MESSAGE value="works till 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="works till 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -106,17 +113,40 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/testAss5.java</url>
+          <line>338</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java</url>
           <line>15</line>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java</url>
+          <line>25</line>
+          <properties class="BankAccountsBinarySearchTree" method="buildBalancedTree">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="curr.left" language="JAVA" />
-        <watch expression="curr.right" language="JAVA" />
-        <watch expression="curr.data" language="JAVA" />
+        <watch expression="this.num" language="JAVA" />
+        <watch expression="primeToCheck" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
