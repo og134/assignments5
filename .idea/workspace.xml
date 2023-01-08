@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1b81e3c-0c86-45e1-83f4-48c2fc21e4c8" name="Changes" comment="work 0 - 4 &#10;need to check 5b 5e 6">
+    <list default="true" id="a1b81e3c-0c86-45e1-83f4-48c2fc21e4c8" name="Changes" comment="0-5 &#10;need to finish 6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankAccountFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankAccountFiltering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankAccountsBinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilterByBalance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilterByBalance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FilterIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilterIterator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673112304230</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="0-5 &#10;need to finish 6">
+      <created>1673123014113</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673123014113</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,7 +113,8 @@
     <MESSAGE value="the first commit" />
     <MESSAGE value="works till 4" />
     <MESSAGE value="work 0 - 4 &#10;need to check 5b 5e 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="work 0 - 4 &#10;need to check 5b 5e 6" />
+    <MESSAGE value="0-5 &#10;need to finish 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="0-5 &#10;need to finish 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -123,11 +130,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/FilterIterator.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/testAss5.java</url>
+          <line>654</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BankAccount.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Bank.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Bank.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="BankAccount" memberName="balance" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this.num" language="JAVA" />

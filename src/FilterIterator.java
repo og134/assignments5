@@ -10,13 +10,14 @@ public class FilterIterator<T> implements Iterator<T> {
 		this.filters = filters;
 		this.iterator = elements.iterator();
 		this.next = next();
-		if(this.next == null)
-			throw new NoSuchElementException("yea...sure...lets give conditions without meaning, why the hell not?");
+
 	}
 	
 	@Override
 	public boolean hasNext() {
-		return this.next != null;
+		if(this.next == null)
+			throw new NoSuchElementException("yea...sure...lets give conditions without meaning, why the hell not?");
+		return true;
 
 	}
 
